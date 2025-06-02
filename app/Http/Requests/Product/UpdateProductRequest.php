@@ -23,10 +23,10 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'nama_barang' => 'required|string|max:255',
-            'jumlah'      => 'required|integer|min:0',
+            'deskripsi'   => 'required|string|max:255',
             'harga'       => 'required|numeric|min:0',
             'diskon'      => 'required|integer|min:0|max:100',
-            'image_url'   => 'nullable|string|max:255',
+            'image_url'   => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ];
     }
 }

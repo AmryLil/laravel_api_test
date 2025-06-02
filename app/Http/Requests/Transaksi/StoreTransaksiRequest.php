@@ -14,7 +14,7 @@ class StoreTransaksiRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'product_id'   => 'required|exists:products,id',
+      'product_id'   => 'required|exists:products,kode_barang',
       'jumlah'       => 'required|integer|min:1',
       'harga_satuan' => 'required|numeric|min:0',
       'diskon'       => 'nullable|integer|min:0|max:100',

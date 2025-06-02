@@ -22,12 +22,13 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode_barang' => 'required|string|max:50|unique:products,kode_barang',
+            'kode_barang' => 'nullable|string|max:50|unique:products,kode_barang',
             'nama_barang' => 'required|string|max:255',
+            'deskripsi'   => 'required|string|max:255',
             'jumlah'      => 'required|integer|min:0',
             'harga'       => 'required|numeric|min:0',
-            'diskon'      => 'required|integer|min:0|max:100',
-            'image_url'   => 'nullable|string|max:255',
+            'diskon'      => 'nullable|integer|min:0|max:100',
+            'image_url'   => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ];
     }
 }
